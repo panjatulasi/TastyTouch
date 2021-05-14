@@ -24,6 +24,18 @@ background-color: none;
 outline: none;
 }
 	</style>
+	<style>
+    .table_legenda {
+  table-layout: fixed;
+}
+.table_legenda td {
+  overflow-wrap: break-word;
+  overflow-y:auto;
+  overflow-x:hidden;
+  
+}
+
+</style>
 
 	
 <script type="text/javascript">
@@ -72,44 +84,50 @@ req.send(null);
 	$dbPassword="root";
 	$dbName="food";
 	$con = new mysqli($host,$dbUsername,$dbPassword,$dbName);
-	$res = $con->query("select * from todayspecials");
+	$res = $con->query("select * from cart");
 
 	
-	echo "<div class=\"row\">
+	echo "<div style=\"padding-top:150px;padding-right:1000px;padding-left:10px\">
+        <table class=\"table table-bordered table-hover table-sm text-center table_legenda\" style=\"width:1500px;padding-top:150px;margin-left:auto;margin-right:auto\">
+            <thead>
+                <tr class=\"text-white\" style=\"background-color: hsl(36, 93%, 61%);\">
+                    <th style=\"text-align:center;\">Item Name</th>
+                    <th style=\"text-align:center;\">Cost</th>
+                    <th style=\"text-align:center;\">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
 	";
 
 	while($row = mysqli_fetch_assoc($res)){
-		$path = 'images/'.$row['imageName'];
 		$cost = $row['cost'];
 		$itemName=$row['itemName'];	
+		$quantity=$row['quantity'];
 		$id = $row['id'];
 		echo "
-		<div class=\"col-md-3\" style=\"padding-top:70px;padding-right:15px\">
-		<div class=\"card\" style=\"background-image: url($path); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 300px;width: 300px;\">
-		<div id=\"result\">
-			
-		</div>
-		<form  name=\"result\" method=\"POST\">
-		<h3 style=\"padding-top:220px;padding-left:20px;\"><strong><mark style=\"color:white;background-color:black;\">$itemName</mark></strong></h3>
-		</div>
-		<div class=\"row\">
-		<div class=\"col-md-4\" style=\"padding-right:5px\">
-		<h3 style=\"color:black\"><strong><mark style=\"color:white;background-color:black\">$cost/- </mark></strong> </h3> 
-		</div>
 		
-		<div class=\"col-md-1\"></div>
-		<div class=\"col-md-6\" style=\"padding-top:18px;padding-right:20px\">
-		<button type=\"submit\" onclick=\"getMarks($id)\" name=\"button1\" class=\"btn btn-dark\">  
-		<span class=\"glyphicon glyphicon-shopping-cart\">  
-		</span> <b>Add to Cart</b>  
-		</button>
-		</div>
-		</form>
-		</div>
-		</div>";
+                <tr style=\"background-color: rgba(0,0,0,0.5);\">
+                    <td style=\"text-align:center;color:whitesmoke\">$itemName</td>
+                    
+                    <td style=\"text-align:center;color:whitesmoke\">$cost</td>
+                    <td style=\"text-align:center;color:whitesmoke\">$quantity</td>
+    </tr>
+    ";
+		
 	}
+	
+
 
 	?>
+	</tbody>
+    </table>
+<center style="padding-left: 1300px;padding-top:30px">
+    <button type="submit" onclick="getMarks()" name="button1" class="btn btn-dark">  
+		  
+		<b>Check Out</b>  
+		</button>
+	</center>
+
 
 </body>
 </html>
