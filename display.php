@@ -24,6 +24,25 @@ background-color: none;
 outline: none;
 }
 	</style>
+	<style >
+  .navbar-nav {
+    margin-left: auto;
+  }
+  .navbar-brand{
+    color: "orange";
+  }
+  .logo-image{
+    width: 51px;
+    height: 49px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 1;
+}
+#line{
+	text-decoration:none; 
+}
+
+  </style>
 
 	
 <script type="text/javascript">
@@ -63,8 +82,37 @@ req.send(null);
 
 		<link rel="stylesheet" href="css/style.css">
 	</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width:1536px;padding-top:0px;padding-bottom: 0px;height:72px;opacity:0.9;">
+  <a class="navbar-header" href="login.html">
+    <div class="logo-image">
+    <img src="images/logo1_round1.jpeg" width="60" height="60" class="img-fluid" alt="">
+  </div>
+  </a>
+  <pre style="font-size: 0px;padding-bottom: -5px;border:0px;background-color: transparent;padding-right:960px;">
+
+    <h1 style="color:white;font-family: Georgia, serif;font-size:23px; ">      <a href="login.html" style="color:white;" id="line">Tasty
+              Touch</a>           </h1>
+  </pre>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="menu.html" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW CART</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+    </ul>
+
+</nav>
 
 	<?php
 	$host = "localhost";

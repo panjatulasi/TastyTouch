@@ -1,4 +1,9 @@
 <?php
+session_start();
+?>
+
+
+<?php
 error_reporting(0);
 $emailId =$_POST['emailId'];
 $password = $_POST['password'];
@@ -16,6 +21,7 @@ else{
 $result = $con->query("select * from customer where emailId='$emailId' and password='$password' ");
 if(($row = mysqli_fetch_assoc($result)) !== null){
 if($row['emailId'] == $emailId && $row['password'] == $password){
+	$_SESSION["loginId"] = emailId;
 	echo "Login Success";
 	header("Location:http://localhost/TastyTouch/menu.html");
 }

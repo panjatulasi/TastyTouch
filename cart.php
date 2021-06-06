@@ -1,4 +1,9 @@
 <?php
+session_start();
+?>
+
+
+<?php
 $id=$_GET["id"];
 $host = "localhost";
 $dbUsername="root";
