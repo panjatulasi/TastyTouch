@@ -36,7 +36,7 @@
 									<div class="tab-content" style="background-color: black;opacity:0.9;font-family: Georgia,serif;">
 										<div class="tab-content-inner active" data-content="signup" style="color:white">
 											<h3 style="color:#f97212;font-family: Georgia, serif;">Upload Today's Specials</h3>
-											<form action="upload.php" method="POST" enctype="multipart/form-data">
+											<form action="uploadTodaySpecialsDB.php" method="POST" enctype="multipart/form-data">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="itemName">Item Name</label> <input type="text"

@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
 		$result=move_uploaded_file($imageTmpName, $directory.$imageName);
 		if($con->query("insert into todayspecials(id,itemName,cost,imageName) values(NULL,'$itemName',$cost,'$imageName')") === TRUE){
 	echo "Inserted Successfully";
-	header("Location:http://localhost/TastyTouch/index.php");
+	header("Location:http://localhost/TastyTouch/uploadTodaySpecials.php");
 }
 else{
 	echo "Insert failed";

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +64,7 @@ req.onreadystatechange=function (){
 		
 	}
 }
-url="cart.php?id="+a;
+url="cartDB.php?id="+a;
 req.open("GET",url,true);
 req.send(null);
 	}

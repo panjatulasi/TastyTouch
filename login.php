@@ -21,7 +21,7 @@ else{
 $result = $con->query("select * from customer where emailId='$emailId' and password='$password' ");
 if(($row = mysqli_fetch_assoc($result)) !== null){
 if($row['emailId'] == $emailId && $row['password'] == $password){
-	$_SESSION["loginId"] = emailId;
+	$_SESSION["loginId"] = $emailId;
 	echo "Login Success";
 	header("Location:http://localhost/TastyTouch/menu.html");
 }

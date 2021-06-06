@@ -1,4 +1,14 @@
 <?php
+session_start();
+?>
+
+<?php
+// remove all session variables
+session_unset();
+?>
+
+
+<?php
 error_reporting(0);
 
 $name =$_POST['name'];

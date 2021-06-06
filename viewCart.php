@@ -110,16 +110,20 @@ outline: none;
 
 </nav>
 
+
+
 	<?php
 	$host = "localhost";
 	$dbUsername="root";
 	$dbPassword="root";
 	$dbName="food";
 	$con = new mysqli($host,$dbUsername,$dbPassword,$dbName);
-	$res = $con->query("select * from cart");
+  $email = $_SESSION["loginId"];
+	$res = $con->query("select * from cart where emailId='$email' ");
 
 	
-	echo "<div style=\"padding-top:150px;padding-right:1000px;padding-left:10px\">
+	echo "
+  <div style=\"padding-top:150px;padding-right:300px;padding-left:360px\">
         <table class=\"table table-bordered table-hover table-sm text-center table_legenda\" style=\"width:1500px;padding-top:150px;margin-left:auto;margin-right:auto\">
             <thead>
                 <tr class=\"text-white\" style=\"background-color: hsl(36, 93%, 61%);\">
@@ -144,20 +148,17 @@ outline: none;
                     <td style=\"text-align:center;color:whitesmoke\"><b>$itemName</b></td>
                     
                     <td style=\"text-align:center;color:whitesmoke\"><b>$cost</b></td>
-                    <td><button onclick=\"itemIncrease()\" type=\"submit\" class=\"fas fa-plus\" style=\"background-color:transparent;color:white\"></button></td>
+                    <td><button onclick=\"itemIncrease()\" type=\"submit\" name=\"plus\" class=\"fas fa-plus\" style=\"background-color:transparent;color:white\"></button></td>
                     <td style=\"text-align:center;color:whitesmoke\"><b>$quantity</b></td>
-                    <td><button type=\"submit\" class=\"fas fa-minus\" style=\"background-color:transparent;color:white\" onclick=\"itemDecrease()\"></button></td>
+                    <td><button type=\"submit\" name=\"minus\" class=\"fas fa-minus\" style=\"background-color:transparent;color:white\" onclick=\"itemDecrease($id)\"></button></td>
     </tr>
     ";
 		
 	}
-	
-
-
 	?>
 	</tbody>
     </table>
-<center style="padding-left: 1350px;padding-top:30px">
+<center style="padding-left: 700px;padding-top:30px">
     <button type="submit" onclick="getTotal()" name="button1" class="btn btn-dark">  
 		  
 		<b>Check Out</b>  
@@ -167,3 +168,4 @@ outline: none;
 
 </body>
 </html>
+
