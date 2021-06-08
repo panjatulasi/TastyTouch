@@ -61,6 +61,7 @@
 															style="background-color:#f97212">
 													</diV>
 												</div>
+												<a href="menu.html" style="color:#f97212;font-family: Georgia, serif;font-size:17px;padding-left:165px"><b>Go to menu</b></a>
 										</form>
 										</div>
 
