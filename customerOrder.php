@@ -198,22 +198,47 @@ req.send(null);
                     <td style=\"text-align:center;color:whitesmoke\"><b>$quantity</b></td>
                     <td><button type=\"submit\" name=\"minus\" class=\"fas fa-minus\" style=\"background-color:transparent;color:white\" onclick=\"itemDecrease($id)\"></button></td>
     </tr>
-    ";
-		
+    
+		";
 	}
-	?>
 	
+	echo "
 	</tbody>
     </table>
-<center style="padding-left: 700px;padding-top:30px">
-    <a href="customerOrder.php" style="text-decoration: none;color:white;"><button type="submit" onclick="getTotal()" name="button1" class="btn btn-dark">  
+    <h1 style=\"padding-left: 700px;color:white;\">Total:$total</h1>
+<center style=\"padding-left: 700px;padding-top:25px\">
+    <button type=\"submit\" onclick=\"orderPlaced($total)\" name=\"button1\" class=\"btn btn-dark\">  
 		  
-		<b>Check Out</b></a> 
+		<b>Place Order</b>
 		</button>
-	</center>
+	</center> ";
+	
+	?>
 	
 
 
 </body>
+<script type="text/javascript">
+	function orderPlaced(a){
+		try{
+req = new XMLHttpRequest();
+}
+catch(e1){
+alert("Ajax not supported");
+}
+req.onreadystatechange=function (){
+	if(req.readyState == 4){
+		//location.reload();
+		window.location.replace("menu.html");
+		//alert("Added to Cart Successfully :-)");
+		// document.getElementById("result").innerHTML ="Added to Cart Successfully :-)" ;
+		
+	}
+}
+url="customerOrderDB.php?amount="+a;
+req.open("GET",url,true);
+req.send(null);
+	}
+</script>
 </html>
 

@@ -41,6 +41,8 @@ outline: none;
   
 }
 
+
+
 </style>
 
 
@@ -84,7 +86,7 @@ outline: none;
 
   </style>
   <script type="text/javascript">
-	function itemDecrease(a){
+	function getMarks(a){
 		try{
 req = new XMLHttpRequest();
 }
@@ -95,37 +97,16 @@ req.onreadystatechange=function (){
 	if(req.readyState == 4){
 		location.reload();
 		//alert("Added to Cart Successfully :-)");
-		// document.getElementById("result").innerHTML ="Added to Cart Successfully :-)" ;
+		//document.getElementById("result").innerHTML ="Added to Cart Successfully :-)" ;
 		
 	}
 }
-url="cartItemDecrement.php?id="+a;
-req.open("GET",url,true);
-req.send(null);
-	}
-
-
-	function itemIncrease(a){
-		try{
-req = new XMLHttpRequest();
-}
-catch(e1){
-alert("Ajax not supported");
-}
-req.onreadystatechange=function (){
-	if(req.readyState == 4){
-		location.reload();
-		//alert("Added to Cart Successfully :-)");
-		// document.getElementById("result").innerHTML ="Added to Cart Successfully :-)" ;
-		
-	}
-}
-url="cartItemIncrement.php?id="+a;
+url="adminOrderRequestsDB.php?id="+a;
 req.open("GET",url,true);
 req.send(null);
 	}
 </script>
-
+  
 
 </head>
 <body>
@@ -143,10 +124,10 @@ req.send(null);
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="menu.html" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminMenu.php" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; ">VIEW CART</a>
+        <a class="nav-link" href="adminOrderRequests.php" style="font-family: Georgia, serif;font-size:18px; ">VIEW ORDERS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link"href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
@@ -162,8 +143,7 @@ req.send(null);
 	$dbPassword="root";
 	$dbName="food";
 	$con = new mysqli($host,$dbUsername,$dbPassword,$dbName);
-  $email = $_SESSION["loginId"];
-	$res = $con->query("select * from cart where emailId='$email' ");
+	$res = $con->query("select * from orderdetails");
 	$total = 0;
 
 	
@@ -172,31 +152,40 @@ req.send(null);
         <table class=\"table table-bordered table-hover table-sm text-center table_legenda\" style=\"width:1500px;padding-top:150px;margin-left:auto;margin-right:auto\">
             <thead>
                 <tr class=\"text-white\" style=\"background-color: hsl(36, 93%, 61%);\">
-                    <th style=\"text-align:center;\">Item Name</th>
-                    <th style=\"text-align:center;\">Cost</th>
-                    <th style=\"width:55px\"></th>
-                    <th style=\"text-align:center;width:100px;\">Quantity</th>
-                    <th style=\"width:55px\"></th>
+                <th style=\"text-align:center;\">EmailId</th>
+                <th style=\"text-align:center;\">Item Name => Quantity</th>
+                <th style=\"text-align:center;\">Total Cost</th>
+                <th style=\"text-align:center;\">Order Delivered</th>
                 </tr>
             </thead>
             <tbody>
 	";
 
 	while($row = mysqli_fetch_assoc($res)){
-		$cost = $row['cost'];
+		$total = $row['total'];
 		$itemName=$row['itemName'];	
+		$itemName=explode(",",$itemName);
 		$quantity=$row['quantity'];
+		$quantity=explode(",",$quantity);
 		$id = $row['id'];
-		$total += $cost*$quantity;
+		$email = $row['emailId'];
 		echo "
 		
                 <tr style=\"background-color: rgba(0,0,0,0.5);\">
-                    <td style=\"text-align:center;color:whitesmoke\"><b>$itemName</b></td>
+                    <td style=\"text-align:center;color:whitesmoke\"><b>$email</b></td> <td style=\"text-align:center;color:whitesmoke\"> ";
+                    for($i=1;$i<sizeof($itemName);$i++){
+                   echo " 
+                    <b>$itemName[$i] => $quantity[$i]</b><br>";
+                  }
+                  echo "
+                  </td>
+                    <td style=\"text-align:center;color:whitesmoke\"><b>$total</b></td>
+                    <td style=\"text-align:center;color:whitesmoke\">
+                    <button type=\"submit\" onclick=\"getMarks($id)\" name=\"button1\" class=\"btn btn-dark\" style=\"height:38px;background-color:transparent;\">  
+		<span class=\"glyphicon glyphicon-trash\">  
+		</span>
+		</button></td>
                     
-                    <td style=\"text-align:center;color:whitesmoke\"><b>$cost</b></td>
-                    <td><button onclick=\"itemIncrease($id)\" type=\"submit\" name=\"plus\" class=\"fas fa-plus\" style=\"background-color:transparent;color:white\"></button></td>
-                    <td style=\"text-align:center;color:whitesmoke\"><b>$quantity</b></td>
-                    <td><button type=\"submit\" name=\"minus\" class=\"fas fa-minus\" style=\"background-color:transparent;color:white\" onclick=\"itemDecrease($id)\"></button></td>
     </tr>
     ";
 		
@@ -205,15 +194,6 @@ req.send(null);
 	
 	</tbody>
     </table>
-<center style="padding-left: 700px;padding-top:30px">
-    <a href="customerOrder.php" style="text-decoration: none;color:white;"><button type="submit" onclick="getTotal()" name="button1" class="btn btn-dark">  
-		  
-		<b>Check Out</b></a> 
-		</button>
-	</center>
-	
-
-
 </body>
 </html>
 

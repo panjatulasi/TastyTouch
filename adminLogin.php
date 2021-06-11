@@ -4,7 +4,7 @@ $emailId =$_POST['emailId'];
 $password = $_POST['password'];
 if($emailId == "admin" && $password == "admin"){
 	echo "Login Success";
-	header("Location:http://localhost/TastyTouch/adminMenu.html");
+	header("Location:http://localhost/TastyTouch/adminMenu.php");
 }
 else{
 	echo "Login Fail";

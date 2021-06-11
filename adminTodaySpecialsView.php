@@ -107,10 +107,10 @@ req.send(null);
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="menu.html" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminMenu.php" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW CART</a>
+        <a class="nav-link" href="adminOrderRequests.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW Orders</a>
       </li>
       <li class="nav-item">
         <a class="nav-link"href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>

@@ -64,7 +64,7 @@ req.onreadystatechange=function (){
 		
 	}
 }
-url="todaySpecialsCartDB.php?id="+a;
+url="adminNonVegViewDB.php?id="+a;
 req.open("GET",url,true);
 req.send(null);
 	}
@@ -107,10 +107,10 @@ req.send(null);
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="menu.html" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminMenu.php" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW CART</a>
+        <a class="nav-link" href="adminOrderRequests.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW Orders</a>
       </li>
       <li class="nav-item">
         <a class="nav-link"href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
@@ -124,7 +124,7 @@ req.send(null);
 	$dbPassword="root";
 	$dbName="food";
 	$con = new mysqli($host,$dbUsername,$dbPassword,$dbName);
-	$res = $con->query("select * from todayspecials");
+	$res = $con->query("select * from nonveg");
 
 	
 	echo "<div class=\"row\">
@@ -151,9 +151,9 @@ req.send(null);
 		
 		<div class=\"col-md-1\"></div>
 		<div class=\"col-md-6\" style=\"padding-top:18px;padding-right:20px\">
-		<button type=\"submit\" onclick=\"getMarks($id)\" name=\"button1\" class=\"btn btn-dark\">  
-		<span class=\"glyphicon glyphicon-shopping-cart\">  
-		</span> <b>Add to Cart</b>  
+		<button type=\"submit\" onclick=\"getMarks($id)\" name=\"button1\" class=\"btn btn-dark\" style=\"height:38px;\">  
+		<span class=\"glyphicon glyphicon-trash\">  
+		</span> <b>Delete</b>  
 		</button>
 		</div>
 		</form>

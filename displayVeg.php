@@ -64,7 +64,7 @@ req.onreadystatechange=function (){
 		
 	}
 }
-url="todaySpecialsCartDB.php?id="+a;
+url="vegCartDB.php?id="+a;
 req.open("GET",url,true);
 req.send(null);
 	}
@@ -124,7 +124,7 @@ req.send(null);
 	$dbPassword="root";
 	$dbName="food";
 	$con = new mysqli($host,$dbUsername,$dbPassword,$dbName);
-	$res = $con->query("select * from todayspecials");
+	$res = $con->query("select * from veg");
 
 	
 	echo "<div class=\"row\">

@@ -66,10 +66,10 @@ color: inherit;
 
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="menu.html" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="adminMenu.php" style="font-family: Georgia, serif;font-size:18px; ">MENU <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; ">VIEW CART</a>
+        <a class="nav-link" href="adminOrderRequestsDB.php" style="font-family: Georgia, serif;font-size:18px; ">VIEW ORDERS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
@@ -79,7 +79,7 @@ color: inherit;
  
   <div class="row" style="padding-top:25px;padding-right:150px;padding-left:200px;width:2000px;height:300px;">
       <div class="col-md-3">
-      <a href="www.google.com">
+      <a href="adminVegView.php">
       <div class="card" style="background-image: url(images/veg3.jpeg); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 250px;width: 300px;">
     
     <h3 style="padding-top:190px;padding-left:20px;"><strong><mark style="color:white;background-color:black;font-size: 22px">Vegetarian</mark></strong></h3>
@@ -87,12 +87,12 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminVegView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-4">
-    <a href="uploadTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
+    <a href="uploadVeg.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
     </button>
   </div>
   </div>
@@ -100,7 +100,7 @@ color: inherit;
 
 
     <div class="col-md-3">
-      <a href="www.google.com">
+      <a href="adminNonVegView.php">
       <div class="card" style="background-image: url(images/nonveg2.jpg); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 250px;width: 300px;">
     
     <h3 style="padding-top:190px;padding-left:20px;"><strong><mark style="color:white;background-color:black;font-size: 22px">Non-Vegetarian</mark></strong></h3>
@@ -108,12 +108,12 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminNonVegView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-4">
-    <a href="uploadTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
+    <a href="uploadNonVeg.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
     </button>
   </div>
   </div>
@@ -121,7 +121,7 @@ color: inherit;
 
 
     <div class="col-md-3">
-      <a href="www.google.com">
+      <a href="adminStartersView.php">
       <div class="card" style="background-image: url(images/starter.jpg); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 250px;width: 300px;">
     
     <h3 style="padding-top:190px;padding-left:20px;"><strong><mark style="color:white;background-color:black;font-size: 22px">Starters</mark></strong></h3>
@@ -129,12 +129,12 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminStartersView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-4">
-    <a href="uploadTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
+    <a href="uploadStarters.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
     </button>
   </div>
   </div>
@@ -145,7 +145,7 @@ color: inherit;
     <div class="row" style="padding-top:45px;padding-right:150px;padding-left:200px;padding-bottom:-10px;width:2000px;height:300px">
 
       <div class="col-md-3">
-      <a href="www.google.com">
+      <a href="adminMilkShakesView.php">
       <div class="card" style="background-image: url(images/milkshake1.jpeg); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 250px;width: 300px;">
     
     <h3 style="padding-top:190px;padding-left:20px;"><strong><mark style="color:white;background-color:black;font-size: 22px">MilkShakes</mark></strong></h3>
@@ -153,12 +153,12 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminMilkShakesView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-4">
-    <a href="uploadTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
+    <a href="uploadMilkShakes.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
     </button>
   </div>
   </div>
@@ -166,7 +166,7 @@ color: inherit;
 
 
 <div class="col-md-3">
-      <a href="www.google.com">
+      <a href="adminIcecreamView.php">
       <div class="card" style="background-image: url(images/icecreams2.jpeg); color:white;background-repeat: no-repeat;background-position: center;background-size: cover;height: 250px;width: 300px;">
     
     <h3 style="padding-top:190px;padding-left:20px;"><strong><mark style="color:white;background-color:black;font-size: 22px">IceCreams</mark></strong></h3>
@@ -174,12 +174,12 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminIcecreamView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
   <div class="col-md-4">
-    <a href="uploadTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
+    <a href="uploadIcecream.php"><button type="submit" class="btn btn-dark"> <b>Upload</b> </a> 
     </button>
   </div>
   </div>
@@ -197,7 +197,7 @@ color: inherit;
     </div>
     <div class="row">
       <div class="col-md-3">
-    <a href="editTodaySpecials.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
+    <a href="adminTodaySpecialsView.php"><button type="submit" class="btn btn-dark"> <b>View</b> </a> 
     </button>
   </div>
   <div class="col-md-3"></div>
