@@ -113,7 +113,7 @@ req.send(null);
         <a class="nav-link" href="viewCart.php" style="font-family: Georgia, serif;font-size:18px; " >VIEW CART</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"href="login.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+        <a class="nav-link"href="launchPage.html" style="font-family: Georgia, serif;font-size:18px; "><i class="fas fa-sign-out-alt"></i>Logout</a></li>
     </ul>
 
 </nav>
